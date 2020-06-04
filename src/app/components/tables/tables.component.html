@@ -1,0 +1,38 @@
+<!-- <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+  <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+</cdk-virtual-scroll-viewport> -->
+<!-- <cdk-virtual-scroll-viewport [itemSize]="18 * 7" class="example-viewport">
+  <div *cdkVirtualFor="let item of items;
+                         let index = index;
+                         let count = count;
+                         let first = first;
+                         let last = last;
+                         let even = even;
+                         let odd = odd;" [class.example-alternate]="odd">
+    <div class="example-item-detail">Item: {{item}}</div>
+    <div class="example-item-detail">Index: {{index}}</div>
+    <div class="example-item-detail">Count: {{count}}</div>
+    <div class="example-item-detail">First: {{first ? 'Yes' : 'No'}}</div>
+    <div class="example-item-detail">Last: {{last ? 'Yes' : 'No'}}</div>
+    <div class="example-item-detail">Even: {{even ? 'Yes' : 'No'}}</div>
+    <div class="example-item-detail">Odd: {{odd ? 'Yes' : 'No'}}</div>
+  </div>
+</cdk-virtual-scroll-viewport> -->
+<!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport" cdkScrollable>
+  <div *cdkVirtualFor="let item of items; templateCacheSize: 10000" class="example-item">{{item}}</div>
+</cdk-virtual-scroll-viewport> -->
+<!-- <div style="overflow: scroll;width: 100%;">
+  <div class="example-itemtwo">
+    <div *ngFor="let re of dataTitle" [style.width.px]="re.labWidth">
+      {{re.title}}
+    </div>
+  </div>
+</div> -->
+<cdk-virtual-scroll-viewport itemSize="30" class="example-viewport" (copy)="false">
+  <div *cdkVirtualFor="let item of dataBase;let im = index" class="example-item">
+    <div *ngFor="let ite of item.row;let i = index" [style.width.px]="ite.labWidth"
+      [attr.name]="im + 1 + '_' + ite.name + '_' + (i + 1)" class="example-col" [class.col-active]="ite.isSelect">
+      {{ite.name}}
+    </div>
+  </div>
+</cdk-virtual-scroll-viewport>
