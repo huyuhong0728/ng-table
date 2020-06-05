@@ -228,7 +228,7 @@ export class TablesComponent implements OnInit {
 
           let oo = Number(initName.split("_")[0]);
           let pp = Number(nowName.split("_")[0]);
-          if (oo - 1 > pp) {
+          if (oo > pp) {
             let temp = 0;
             temp = oo;
             oo = pp;
